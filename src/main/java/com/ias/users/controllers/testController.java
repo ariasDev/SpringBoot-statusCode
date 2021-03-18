@@ -9,13 +9,13 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping(value = "/testController")
+@RequestMapping(value = "/testServerController")
 public class testController {
 	
 	@GetMapping(path = "", produces = "application/json")
 	public ResponseEntity<Object> testServerAvailability() {
-		HashMap<String, Object> response = new HashMap<String, Object>();
+		HashMap<String, Object> response = new HashMap<>();
 		response.put("response", "Server Ok");
-		 return new ResponseEntity<Object>(response, HttpStatus.OK);
+		 return new ResponseEntity<>(response, HttpStatus.OK);
 	}
 }
